@@ -1,0 +1,25 @@
+{
+  "name": "countrypedia",
+  "version": "1.0.0",
+  "description": "CountryPedia's RESTful API",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "Web",
+    "App",
+    "Countries",
+    "App",
+    "Information"
+  ],
+  "author": "Yasir Lateef",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "https": "^1.0.0",
+    "jade": "^1.11.0",
+    "morgan": "^1.7.0"
+  }
+}
