@@ -22,14 +22,14 @@ http://localhost:8888/api/countries/all
 
 - Information about a country
 ```sh
-http://localhost:8888/api/countries/countryName
+http://localhost:8888/api/countries/:countryName
 ```
 Replace 'countryName' with the name of the country you want info about. For Example Pakistan, United States etc.
 
 
 - Information about a country's specific attribute
 ```sh
-http://localhost:8888/api/countries/countryName/attribName
+http://localhost:8888/api/countries/:countryName/:attribName
 ```
 Replace 'countryName' and 'attribName' parameters with the country and attribute(lowercase) you want info about. For Example Pakistan, United States etc.
 ###### List of Attributes
@@ -56,7 +56,7 @@ Replace 'countryName' and 'attribName' parameters with the country and attribute
  
  - List of countries in a specified region
  ```sh
- http://localhost:8888/api/regions/regionName
+ http://localhost:8888/api/regions/:regionName
  ```
  Replace 'regionName' parameter with the name of one of the regions. For Example Africa, Europe etc
  ###### List of Regions
