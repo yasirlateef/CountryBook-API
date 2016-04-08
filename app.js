@@ -1,11 +1,10 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var logger = require('morgan');
+var cors = require('cors');
 var countries = require('./data/countries');
 
 var app = express();
-
-app.locals.countries = countries;
 
 //Requiring the API
 var api = require('./routes/api');
@@ -14,6 +13,7 @@ var api = require('./routes/api');
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended : false }));
 app.use(express.static(__dirname + '/public'));
