@@ -25,18 +25,6 @@ router.get('/countries/:countryName/:attrib',  function(req, res){
 });
 
 
-//Routes for Regions and subregions
-router.get('/regions', function(req,res){
-	res.json(config.regions);
-});
-
-router.get('/regions/:regionName', function(req, res){
-	var regions = config.regions,
-			countries = config.countries;
-	res.json(regionLookup(regions, countries, req.params.regionName));
-});
-
-
 
 //Helper Functions
 var countryLookup = function(listOfCountries, countryName){
