@@ -1,7 +1,7 @@
 var express = require('express'),
 		router = express.Router(),
-		config = require('../config');
-
+		config = require('../config'),
+		countries = config.countries;
 
 // Routes for Countries
 router.get('/countries/all', function(req, res){
@@ -9,14 +9,12 @@ router.get('/countries/all', function(req, res){
 });
 
 router.get('/countries/:countryName',  function(req, res){
-	var countries = config.countries,
-			paramName = req.params.countryName;
+	var paramName = req.params.countryName;
 			res.json(countryLookup(countries, paramName));
 });
 
 router.get('/countries/:countryName/:attrib',  function(req, res){
-	var countries = config.countries,
-			paramName = req.params.countryName,
+	var paramName = req.params.countryName,
 			paramAttrib = req.params.attrib;
 
 			var searchResult = countryFeatureLookup(countries, paramName, paramAttrib);
@@ -24,7 +22,10 @@ router.get('/countries/:countryName/:attrib',  function(req, res){
 			res.json({ [paramAttrib] : searchResult});
 });
 
-
+// Route for Search Query String
+router.get('/search/', function(req, res){
+	res.json(lookupNamebyISO(countries, req.query.isocode));
+});
 
 //Helper Functions
 var countryLookup = function(listOfCountries, countryName){
@@ -49,25 +50,14 @@ var countryFeatureLookup = function(listOfCountries, countryName, countryAttrib)
 	return response;
 }
 
-var regionLookup = function(listOfRegions, listOfCountries, regionName){
-	var found = false, countriesFound = []; 
-	listOfRegions.forEach(function(currentItem, i){
-		if(currentItem.title === regionName){
-				listOfCountries.forEach(function (currentCountry, i){
-					found = true;
-					if(currentCountry.region === regionName){
-						countriesFound.push(currentCountry);
-					}
-				});
-		} else {
-			response = {'message' : 'Region Not Found!'};
-		}
-		});
-	if(found){
-		return countriesFound;
-	} else {
-		return response;
-	}
+var lookupNamebyISO = function(listOfCountries, isoCode){
+	var response;
+	listOfCountries.forEach(function(currentItem, i){
+		if(currentItem.altSpellings[0].toLowerCase() === isoCode.toLowerCase()){
+			response = { 'name' :  currentItem.name };
+			return;
+		};
+	});
+	return response;
 }
-
 module.exports = router;
