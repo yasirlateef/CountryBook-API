@@ -14,10 +14,11 @@
     "Information"
   ],
   "author": "Yasir Lateef",
-  "repository" : "https://github.com/yasir-lateef/CountryPedia-API.git",
+  "repository": "https://github.com/yasir-lateef/CountryPedia-API.git",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.15.0",
+    "cors": "^2.7.1",
     "express": "^4.13.4",
     "https": "^1.0.0",
     "jade": "^1.11.0",

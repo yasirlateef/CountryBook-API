@@ -1,7 +1,8 @@
 var express = require('express'),
 		router = express.Router(),
 		config = require('../config'),
-		countries = config.countries;
+		countries = config.countries,
+		isoCodeList = config.isocodes;
 
 // Routes for Countries
 router.get('/countries/all', function(req, res){
@@ -24,7 +25,7 @@ router.get('/countries/:countryName/:attrib',  function(req, res){
 
 // Route for Search Query String
 router.get('/search/', function(req, res){
-	res.json(lookupNamebyISO(countries, req.query.isocode));
+	res.json(lookupNamebyISO(isoCodeList, req.query.isocode));
 });
 
 //Helper Functions
@@ -50,13 +51,12 @@ var countryFeatureLookup = function(listOfCountries, countryName, countryAttrib)
 	return response;
 }
 
-var lookupNamebyISO = function(listOfCountries, isoCode){
+var lookupNamebyISO = function(listOfCodeNames, isoCode){
 	var response;
-	listOfCountries.forEach(function(currentItem, i){
-		if(currentItem.altSpellings[0].toLowerCase() === isoCode.toLowerCase()){
-			response = { 'name' :  currentItem.name };
-			return;
-		};
+	listOfCodeNames.forEach(function(item){
+		if(item.code === isoCode){
+			response = { 'name' : item.name };
+		}
 	});
 	return response;
 }
