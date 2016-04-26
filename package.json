@@ -4,7 +4,8 @@
   "description": "CountryPedia's RESTful API",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "log" : "console.log('hello')"
   },
   "keywords": [
     "Web",
