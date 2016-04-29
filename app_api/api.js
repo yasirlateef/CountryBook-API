@@ -20,7 +20,7 @@ router.get('/countries/:countryName/:attrib',  function(req, res){
 
 			var searchResult = countryFeatureLookup(countries, paramName, paramAttrib);
 
-			res.json({ [paramAttrib] : searchResult});
+			res.json({ paramAttrib : searchResult});
 });
 
 // Route for Search Query String
