@@ -1,17 +1,49 @@
 [
 	{
-		"title" : "Asia"
+		"title" : "Asia",
+		"subregions" : [
+			"Southern Asia",
+			"South-Eastern Asia",
+			"Central Asia",
+			"Eastern Asia",
+			"Western Asia"
+		]
 	},
 	{
-		"title" : "Europe"
+		"title" : "Europe",
+		"subregions" : [
+			"Nothern Europe",
+			"Southern Europe",
+			"Eastern Europe",
+			"Western Europe"
+		]
 	},
 	{
-		"title" : "Africa"
+		"title" : "Africa",
+		"subregions" : [
+			"Nothern Africa",
+			"Southern Africa",
+			"Middle Africa",
+			"Eastern Africa",
+			"Western Africa"
+		]
 	},
 	{
-		"title" : "Oceania"
+		"title" : "Oceania",
+		"subregions" : [
+			"Polynesia",
+			"Melanesia",
+			"Micronesia",
+			"Australia and New Zealand"
+		]
 	},
 	{
-		"title" : "Americas"
+		"title" : "Americas",
+		"subregions" : [
+			"Caribbean",
+			"Northern America",
+			"South America",
+			"Central America"
+		]
 	}
 ]
