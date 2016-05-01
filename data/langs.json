@@ -1,332 +1,442 @@
 [
   {
-    "code": "ps"
+    "code": "ps",
+    "name" : "Pushto"
   },
   {
-    "code": "uz"
+    "code": "uz",
+    "name" : "Uzbek"
   },
   {
-    "code": "tk"
+    "code": "tk",
+    "name" : "Turkmen"
   },
   {
-    "code": "sv"
+    "code": "sv",
+    "name" : "Swedish"
   },
   {
-    "code": "sq"
+    "code": "sq",
+    "name" : "Albanian"
   },
   {
-    "code": "ar"
+    "code": "ar",
+    "name" : "Arabic"
   },
   {
-    "code": "en"
+    "code": "en",
+    "name" : "English"
   },
   {
-    "code": "sm"
+    "code": "sm",
+    "name" : "Samoan"
   },
   {
     "code": "ca"
+    "name": "Catalan"
   },
   {
     "code": "pt"
+    "name" : "Portuguese"
   },
   {
-    "code": "es"
+    "code": "es",
+    "name" : "Spanish"
   },
   {
-    "code": "gn"
+    "code": "gn",
+    "name" : "Guaraní"
   },
   {
-    "code": "hy"
+    "code": "hy",
+    "name" : "Armenian"
   },
   {
-    "code": "ru"
+    "code": "ru",
+    "name": "Russian"
   },
   {
-    "code": "nl"
+    "code": "nl",
+    "name": "Dutch"
   },
   {
-    "code": "pa"
+    "code": "pa",
+    "name": "Punjabi"
   },
   {
-    "code": "de"
+    "code": "de",
+    "name": "German"
   },
   {
-    "code": "az"
+    "code": "az",
+    "name": "Azerbaijani"
   },
   {
-    "code": "bn"
+    "code": "bn",
+    "name": "Bengali"
   },
   {
-    "code": "be"
+    "code": "be",
+    "name": "Belarusian"
   },
   {
-    "code": "fr"
+    "code": "fr",
+    "name": "French"
   },
   {
-    "code": "dz"
+    "code": "dz",
+    "name": "Dzongkha"
   },
   {
-    "code": "ay"
+    "code": "ay",
+    "name": "Aymara"
   },
   {
-    "code": "qu"
+    "code": "qu",
+    "name": "Quechua"
   },
   {
-    "code": "bs"
+    "code": "bs",
+    "name": "Bosnian"
   },
   {
-    "code": "hr"
+    "code": "hr",
+    "name": "Croatian"
   },
   {
-    "code": "sr"
+    "code": "sr",
+    "name": "Serbian"
   },
   {
-    "code": "tn"
+    "code": "tn",
+    "name": "Tswana"
   },
   {
-    "code": "ms"
+    "code": "ms",
+    "name": "Malay"
   },
   {
-    "code": "bg"
+    "code": "bg",
+    "name": "Bulgarian"
   },
   {
     "code": "ff"
+    "name": "Fula"
   },
   {
-    "code": "rn"
+    "code": "rn",
+    "name": "Kirundi"
   },
   {
-    "code": "km"
+    "code": "km",
+    "name": "Khmer"
   },
   {
-    "code": "sg"
+    "code": "sg",
+    "name": "Sango"
   },
   {
-    "code": "zh"
+    "code": "zh",
+    "name": "Chinese"
   },
   {
-    "code": "ln"
+    "code": "ln",
+    "name": "Lingala"
   },
   {
-    "code": "kg"
+    "code": "kg",
+    "name": "Kongo"
   },
   {
-    "code": "sw"
+    "code": "sw",
+    "name": "Swahili"
   },
   {
-    "code": "lu"
+    "code": "lu",
+    "name": "Luba-Katanga"
   },
   {
-    "code": "el"
+    "code": "el",
+    "name": "Greek"
   },
   {
-    "code": "tr"
+    "code": "tr",
+    "name": "Turkish"
   },
   {
-    "code": "cs"
+    "code": "cs",
+    "name": "Czech"
   },
   {
-    "code": "sk"
+    "code": "sk",
+    "name": "Slovak"
   },
   {
-    "code": "da"
+    "code": "da",
+    "name": "Danish"
   },
   {
-    "code": "ti"
+    "code": "ti",
+    "name": "Tigrinya"
   },
   {
-    "code": "et"
+    "code": "et",
+    "name": "Estonian"
   },
   {
-    "code": "am"
+    "code": "am",
+    "name": "Amharic"
   },
   {
-    "code": "fo"
+    "code": "fo",
+    "name": "Faroese"
   },
   {
-    "code": "fj"
+    "code": "fj",
+    "name": "Fijian"
   },
   {
-    "code": "hi"
+    "code": "hi",
+    "name": "Hindi"
   },
   {
-    "code": "ur"
+    "code": "ur",
+    "name": "Urdu"
   },
   {
-    "code": "fi"
+    "code": "fi",
+    "name": "Finnish"
   },
   {
-    "code": "ka"
+    "code": "ka",
+    "name": "Georgian"
   },
   {
-    "code": "kl"
+    "code": "kl",
+    "name": "Kalaallisut"
   },
   {
-    "code": "ch"
+    "code": "ch",
+    "name": "Chamorro"
   },
   {
-    "code": "ht"
+    "code": "ht",
+    "name": "Haitian"
   },
   {
-    "code": "hu"
+    "code": "hu",
+    "name": "Hungarian"
   },
   {
-    "code": "is"
+    "code": "is",
+    "name": "Icelandic"
   },
   {
-    "code": "id"
+    "code": "id",
+    "name": "Indonesian"
   },
   {
-    "code": "fa"
+    "code": "fa",
+    "name": "Persian"
   },
   {
-    "code": "ku"
+    "code": "ku",
+    "name": "Kurdish"
   },
   {
-    "code": "ga"
+    "code": "ga",
+    "name": "Irish"
   },
   {
-    "code": "gv"
+    "code": "gv",
+    "name": "Manx"
   },
   {
-    "code": "he"
+    "code": "he",
+    "name": "Hebrew"
   },
   {
-    "code": "it"
+    "code": "it",
+    "name": "Italian"
   },
   {
-    "code": "ja"
+    "code": "ja",
+    "name": "Japanese"
   },
   {
-    "code": "kk"
+    "code": "kk",
+    "name": "Kazakh"
   },
   {
-    "code": "ky"
+    "code": "ky",
+    "name": "Kyrgyz"
   },
   {
-    "code": "lo"
+    "code": "lo",
+    "name": "Lao"
   },
   {
-    "code": "lv"
+    "code": "lv",
+    "name": "Latvian"
   },
   {
-    "code": "st"
+    "code": "st",
+    "name": "Southern Sotho"
   },
   {
-    "code": "lt"
+    "code": "lt",
+    "name": "Lithuanian"
   },
   {
-    "code": "lb"
+    "code": "lb",
+    "name": "Luxembourgish"
   },
   {
-    "code": "mk"
+    "code": "mk",
+    "name": "Macedonian"
   },
   {
-    "code": "mg"
+    "code": "mg",
+    "name": "Malagasy"
   },
   {
-    "code": "ny"
+    "code": "ny",
+    "name": "Chichewa"
   },
   {
-    "code": "dv"
+    "code": "dv",
+    "name": "Divehi"
   },
   {
-    "code": "mt"
+    "code": "mt",
+    "name": "Maltese"
   },
   {
-    "code": "mh"
+    "code": "mh",
+    "name": "Marshallese"
   },
   {
-    "code": "ro"
+    "code": "ro",
+    "name": "Romanian"
   },
   {
-    "code": "mn"
+    "code": "mn",
+    "name": "Mongolian"
   },
   {
-    "code": "my"
+    "code": "my",
+    "name": "Burmese"
   },
   {
     "code": "af"
+    "name": "Afrikaans"
   },
   {
-    "code": "na"
+    "code": "na",
+    "name": "Nauruan"
   },
   {
-    "code": "ne"
+    "code": "ne",
+    "name": "Nepali"
   },
   {
     "code": "mi"
+    "name": "Māori"
   },
   {
-    "code": "ko"
+    "code": "ko",
+    "name": "Korean"
   },
   {
-    "code": "no"
+    "code": "no",
+    "name": "Norwegian"
   },
   {
-    "code": "nb"
+    "code": "nb",
+    "name": "Norwegian Bokmål"
   },
   {
-    "code": "nn"
+    "code": "nn",
+    "name": "Norwegian Nynorsk"
   },
   {
-    "code": "pl"
+    "code": "pl",
+    "name": "Polish"
   },
   {
-    "code": "rw"
+    "code": "rw",
+    "name": "Kinyarwanda"
   },
   {
-    "code": "ta"
+    "code": "ta",
+    "name": "Tamil"
   },
   {
-    "code": "sl"
+    "code": "sl",
+    "name": "Slovene"
   },
   {
-    "code": "so"
+    "code": "so",
+    "name": "Somali"
   },
   {
-    "code": "nr"
+    "code": "nr",
+    "name": "Southern Ndebele"
   },
   {
-    "code": "ss"
+    "code": "ss",
+    "name": "Swati"
   },
   {
-    "code": "ts"
+    "code": "ts",
+    "name": "Tsonga"
   },
   {
-    "code": "ve"
+    "code": "ve",
+    "name": "Venda"
   },
   {
-    "code": "xh"
+    "code": "xh",
+    "name": "Xhosa"
   },
   {
-    "code": "zu"
+    "code": "zu",
+    "name": "Zulu"
   },
   {
-    "code": "si"
+    "code": "si",
+    "name": "Sinhala"
   },
   {
-    "code": "tg"
+    "code": "tg",
+    "name": "Tajik"
   },
   {
-    "code": "th"
+    "code": "th",
+    "name": "Thai"
   },
   {
-    "code": "to"
+    "code": "to",
+    "name": "Tonga"
   },
   {
-    "code": "uk"
+    "code": "uk",
+    "name": "Ukrainian"
   },
   {
-    "code": "bi"
+    "code": "bi",
+    "name": "Bislama"
   },
   {
-    "code": "vi"
+    "code": "vi",
+    "name": "Vietnamese"
   },
   {
-    "code": "sn"
+    "code": "sn",
+    "name": "Shona"
   },
   {
-    "code": "nd"
+    "code": "nd",
+    "name": "Northern Ndebele"
   }
 ]
