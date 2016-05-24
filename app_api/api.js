@@ -1,63 +1,82 @@
 var express = require('express'),
-		router = express.Router(),
-		config = require('../config'),
-		countries = config.countries,
-		isoCodeList = config.isocodes;
+		mongoose = require('mongoose'),
+		router = express.Router();
 
-// Routes for Countries
-router.get('/countries/all', function(req, res){
-	res.json(config.countries);
+router.get('/countries/all', function(req,res){
+	var countries = global.app_mongoCollections.countries;
+	countries.find({}).toArray(function(err, docs) {
+		if(err)
+			res.json(err)
+		else
+			res.json(docs);
+	});	
+	
 });
 
+
 router.get('/countries/:countryName',  function(req, res){
-	var paramName = req.params.countryName;
-			res.json(countryLookup(countries, paramName));
+	var countries = global.app_mongoCollections.countries;
+	countries.findOne({'name' : req.params.countryName}, function(err, doc){
+		if(err)
+			res.json(err)
+		else 
+			res.json(doc)
+	})
 });
 
 router.get('/countries/:countryName/:attrib',  function(req, res){
-	var paramName = req.params.countryName,
-			paramAttrib = req.params.attrib;
-
-			var searchResult = countryFeatureLookup(countries, paramName, paramAttrib);
-
-			res.json({ paramAttrib : searchResult});
+	var countries = global.app_mongoCollections.countries;
+	countries.findOne({'name' : req.params.countryName},  [req.params.attrib], function(err, doc){
+		if(err)
+			res.json(err)
+		else 
+			res.json(doc)
+	});
 });
 
-// Route for Search Query String
-router.get('/search/', function(req, res){
-	res.json(lookupNamebyISO(isoCodeList, req.query.isocode));
-});
+router.get('/isocountrycodes/all', function(req, res){
+	var isocountrynames = global.app_mongoCollections.isocountrynames;
+	isocountrynames.find({}, function(err, docs){
+		if(err)
+			res.json(err)
+		else 
+			res.json(docs)
+	})	
+})
 
-//Helper Functions
-var countryLookup = function(listOfCountries, countryName){
-	var response;
-	listOfCountries.forEach(function(currentItem, i){
-		if(currentItem.name === countryName){
-			response = currentItem;
-			return;
-		};
-	});
-	return response;
-}
+//Base Route for Query String
+router.get('/isocountrycodes/search', function(req, res){
+	var isocountrynames = global.app_mongoCollections.isocountrynames;
+	isocountrynames.findOne({[req.query.attr] : [req.query.value] }, function(err, doc){
+		if(err)
+			res.json(err)
+		else 
+			res.json(doc)
+	})	
+})
 
-var countryFeatureLookup = function(listOfCountries, countryName, countryAttrib){
-	var response;
-	listOfCountries.forEach(function(currentItem, i){
-		if(currentItem.name === countryName){
-			response = currentItem[countryAttrib];
-			return;
-		};
-	});
-	return response;
-}
+router.get('/isolanguagecodes/all', function(req, res){
+	var isolanguagenames = global.app_mongoCollections.isolanguagenames;
+	isolanguagenames.find({}, function(err, docs){
+		if(err)
+			res.json(err)
+		else 
+			res.json(docs)
+	})	
+})
 
-var lookupNamebyISO = function(listOfCodeNames, isoCode){
-	var response;
-	listOfCodeNames.forEach(function(item){
-		if(item.code === isoCode){
-			response = { 'name' : item.name };
-		}
-	});
-	return response;
+//Base Route for Query String
+router.get('/isolanguagecodes/search/', function(req, res){
+	var isolanguagenames = global.app_mongoCollections.isolanguagenames;
+	isolanguagenames.findOne({[req.query.attr] : [req.query.value] }, function(err, doc){
+		if(err)
+			res.json(err)
+		else 
+			res.json(doc)
+	})	
+}) 
+
+module.exports = {
+	router_countries : router,
+	router_regions : require('./api-regions')
 }
-module.exports = router;

@@ -1,42 +1,48 @@
 var express = require('express'),
-		router = express.Router(),
-		config = require('../config');
+		mongoose = require('mongoose'),
+		router = express.Router();
 
 
-//Routes for Regions and subregions
-router.get('/', function(req,res){
-	res.json(config.regions);
+
+router.get('/all', function(req, res){
+	var regions = global.app_mongoCollections.regions;
+	regions.find().toArray(function(err,docs){
+		if(err)
+			res.json(err)
+		else
+			res.json(docs)
+	})
 });
 
-router.get('/:regionName', function(req, res){
-	var regions = config.regions,
-			countries = config.countries;
-	res.json(regionLookup(regions, countries, req.params.regionName));
+router.get('/:regName', function(req, res){
+	var regions = global.app_mongoCollections.regions;
+	var countries = global.app_mongoCollections.countries;
+	var response = {};
+	regions.findOne({'title' : req.params.regName}, function(err,doc){
+		if(err)
+			res.json(err)
+		else
+			response.region = doc;
+	});
+	countries.find({'region': req.params.regName}).toArray(function(err,docs){
+		if(err)
+			res.json(err)
+		else
+			response.countriesbyRegion = docs;
+			res.json(response);
+	});
 });
 
 
+router.get('/:regionName/:subRegion', function(req, res){
+	var countries = global.app_mongoCollections.countries;
+	countries.find({'region' : req.params.regionName, 'subregion' : req.params.subRegion}).toArray(function(err, docs){
+		if(err)
+			res.json(err)
+		else
+		res.json(docs)
+	})
+});
 
-//Helper Functions
-
-var regionLookup = function(listOfRegions, listOfCountries, regionName){
-	var found = false, countriesFound = []; 
-	listOfRegions.forEach(function(currentItem, i){
-		if(currentItem.title === regionName){
-				listOfCountries.forEach(function (currentCountry, i){
-					found = true;
-					if(currentCountry.region === regionName){
-						countriesFound.push(currentCountry);
-					}
-				});
-		} else {
-			response = {'message' : 'Region Not Found!'};
-		}
-		});
-	if(found){
-		return countriesFound;
-	} else {
-		return response;
-	}
-}
 
 module.exports = router;
