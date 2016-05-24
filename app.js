@@ -1,21 +1,37 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var logger = require('morgan');
-var cors = require('cors');
-var countries = require('./data/countries');
+var express = require('express'),
+		mongoose = require('mongoose'),
+		cors = require('cors'),
+		app = express(),
+		api = require('./app_api/api');
+		global.app_mongoCollections = {};
 
-var app = express();
 
+
+//Connecting to mlab DB
+mongoose.connect('mongodb://cpduser:cpdpass@ds023418.mlab.com:23418/countrypedia', function(err){
+	if(err)
+		console.log(err)
+	else
+		console.log('Connected Successfully!');
+		global.app_mongoCollections = {
+			countries : mongoose.connection.db.collection('countries'),
+			isocountrynames : mongoose.connection.db.collection('isocountrynames'),
+			isolanguagenames : mongoose.connection.db.collection('isolanguagenames'),
+			regions : mongoose.connection.db.collection('regions')
+		}
+});
+
+// Middleware
 app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended : false }));
-app.use(express.static(__dirname + '/public'));
+app.use(express.static('app_client'));
 
-//Setting up the API
-app.use('/api', require('./app_api/api'));
-app.use('/api/regions', require('./app_api/api-regions'));
-
-console.log('Express App listening to Port 8888');
-app.listen(8888);
+// Routing
+app.get('/', function(req,res){ res.sendFile(__dirname + '/app_client/ngSrc/views/index.html');});
+app.use('/api', api.router_countries);
+app.use('/api/regions', api.router_regions);
+	
+//Setting up port
+app.listen(process.env.PORT || 2000);
+console.log('App listening to Port 2000');
 
 module.exports = app;
