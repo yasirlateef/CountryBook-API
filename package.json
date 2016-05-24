@@ -1,7 +1,7 @@
 {
-  "name": "countrypedia",
+  "name": "countrybook",
   "version": "1.0.0",
-  "description": "CountryPedia's RESTful API",
+  "description": "CountryBook's RESTful API",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
@@ -16,11 +16,8 @@
   "repository": "https://github.com/yasir-lateef/CountryPedia-API.git",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.15.0",
     "cors": "^2.7.1",
     "express": "^4.13.4",
-    "https": "^1.0.0",
-    "jade": "^1.11.0",
-    "morgan": "^1.7.0"
+    "mongoose": "^4.4.14"
   }
 }
