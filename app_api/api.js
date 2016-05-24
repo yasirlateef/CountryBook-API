@@ -2,6 +2,7 @@ var express = require('express'),
 		mongoose = require('mongoose'),
 		router = express.Router();
 
+
 router.get('/countries/all', function(req,res){
 	var countries = global.app_mongoCollections.countries;
 	countries.find({}).toArray(function(err, docs) {
@@ -9,10 +10,8 @@ router.get('/countries/all', function(req,res){
 			res.json(err)
 		else
 			res.json(docs);
-	});	
-	
+	});		
 });
-
 
 router.get('/countries/:countryName',  function(req, res){
 	var countries = global.app_mongoCollections.countries;

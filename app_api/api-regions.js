@@ -2,8 +2,6 @@ var express = require('express'),
 		mongoose = require('mongoose'),
 		router = express.Router();
 
-
-
 router.get('/all', function(req, res){
 	var regions = global.app_mongoCollections.regions;
 	regions.find().toArray(function(err,docs){
