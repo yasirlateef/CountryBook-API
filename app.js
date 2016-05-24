@@ -5,10 +5,8 @@ var express = require('express'),
 		api = require('./app_api/api');
 		global.app_mongoCollections = {};
 
-
-
-//Connecting to mlab DB
-mongoose.connect('mongodb://cpduser:cpdpass@ds023418.mlab.com:23418/countrypedia', function(err){
+//Connecting to DB
+mongoose.connect('mongodb://localhost:27017/apidev', function(err){
 	if(err)
 		console.log(err)
 	else
@@ -23,10 +21,9 @@ mongoose.connect('mongodb://cpduser:cpdpass@ds023418.mlab.com:23418/countrypedia
 
 // Middleware
 app.use(cors());
-app.use(express.static('app_client'));
+app.use(express.static('public'));
 
 // Routing
-app.get('/', function(req,res){ res.sendFile(__dirname + '/app_client/ngSrc/views/index.html');});
 app.use('/api', api.router_countries);
 app.use('/api/regions', api.router_regions);
 	
