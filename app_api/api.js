@@ -46,7 +46,7 @@ router.get('/isocountrycodes/all', function(req, res){
 //Base Route for Query String
 router.get('/isocountrycodes/search', function(req, res){
 	var isocountrynames = global.app_mongoCollections.isocountrynames;
-	isocountrynames.findOne({[req.query.attr] : [req.query.value] }, function(err, doc){
+	isocountrynames.findOne({[req.query.attr] : req.query.value }, function(err, doc){
 		if(err)
 			res.json(err)
 		else 
@@ -67,7 +67,7 @@ router.get('/isolanguagecodes/all', function(req, res){
 //Base Route for Query String
 router.get('/isolanguagecodes/search/', function(req, res){
 	var isolanguagenames = global.app_mongoCollections.isolanguagenames;
-	isolanguagenames.findOne({[req.query.attr] : [req.query.value] }, function(err, doc){
+	isolanguagenames.findOne({[req.query.attr] : req.query.value }, function(err, doc){
 		if(err)
 			res.json(err)
 		else 
